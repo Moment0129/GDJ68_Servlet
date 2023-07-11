@@ -10,10 +10,26 @@ public class BankBookInput {
 		this.sc = new Scanner(System.in);
 	}
 	
-	public BankBookDTO bankBookAdd() {
-		// 입력받은 데이터를 bankBookDTO에 보내는 역할.
+	BankBookDTO bankBookDTO = new BankBookDTO();
+	BankBookDAO bankBookDAO = new BankBookDAO();
+	
+	// 상품 조회
+	public BankBookDTO bankBookDetail() throws Exception {
 		
 		BankBookDTO bankBookDTO = new BankBookDTO();
+		
+		System.out.println("조회하실 상품의 번호를 입력해주세요.");
+		bankBookDTO.setBookNum(sc.nextLong());
+		
+		bankBookDAO.bankBookDelete(bankBookDTO);
+		
+		return bankBookDTO;
+	}
+	
+	// 상품 추가
+	public BankBookDTO bankBookAdd() throws Exception {
+		// 입력받은 데이터를 bankBookDTO에 보내는 역할.
+		
 		
 		System.out.println("상품명을 입력하세요.");
 		bankBookDTO.setBookName(sc.next());;
@@ -26,8 +42,24 @@ public class BankBookInput {
 		
 		// 입력받은 데이터를 하나하나 보내는 것은 번거롭기 때문에
 		// bankBookDTO에 한번에 담아서 보냄!!
+		
+		bankBookDAO.bankBookAdd(bankBookDTO);
+		
+		
 		return bankBookDTO;
 		
+	}
+	
+	// 상품 삭제
+	public BankBookDTO bankBookDelete() throws Exception {
+		
+
+		System.out.println("삭제할 상품의 번호를 입력해주세요.");
+		bankBookDTO.setBookNum(sc.nextLong());
+		
+		bankBookDAO.bankBookDelete(bankBookDTO);
+		
+		return bankBookDTO;
 	}
 	
 }

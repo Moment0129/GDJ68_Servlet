@@ -9,7 +9,7 @@ public class DBConnector {	// 도구들을 모아놓는 클래스
 		// static을 붙임으로서 객체생성없이 모든 클래스가 getConnector를 사용할 수 있다.
 		String user = "user01";
 		String password = "user01";
-		String url = "jdbc:oracle:thin:@54.180.144.148:1521:xe";
+		String url = "jdbc:oracle:thin:@43.200.179.172:1521:xe";
 		//								      ec2 public IP:SID
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		
@@ -24,7 +24,7 @@ public class DBConnector {	// 도구들을 모아놓는 클래스
 		// Connection은 Interface라서 객체를 선언할 수 없다.
 		// DriverManager 클래스의 getConnection 클래스 메소드
 		
-		System.out.println(con);
+//		System.out.println(con);
 		
 		// ignore에 등록
 		
