@@ -26,6 +26,8 @@ public class DBConnector {	// 도구들을 모아놓는 클래스
 		
 		System.out.println(con);
 		
+		// ignore에 등록
+		
 		return con;
 	}
 }
