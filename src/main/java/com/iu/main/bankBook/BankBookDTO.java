@@ -5,16 +5,16 @@ public class BankBookDTO {
 	
 	// 컬럼명과 변수명은 동일하게 쓰기!!
 	
-	private long bookNum;
+	private int bookNum;
 	private String bookName;
 	private double bookRate;
 	private int bookSale;
 	
 	
-	public long getBookNum() {
+	public int getBookNum() {
 		return bookNum;
 	}
-	public void setBookNum(long bookNum) {
+	public void setBookNum(int bookNum) {
 		this.bookNum = bookNum;
 	}
 	public String getBookName() {

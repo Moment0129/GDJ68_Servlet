@@ -2,6 +2,9 @@ package com.iu.main.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class DBConnector {	// 도구들을 모아놓는 클래스
 	
@@ -30,4 +33,16 @@ public class DBConnector {	// 도구들을 모아놓는 클래스
 		
 		return con;
 	}
+	
+	public static void disConnect(ResultSet rs,PreparedStatement st, Connection con) throws SQLException {
+		rs.close();
+		st.close();
+		con.close();
+		
+	}
+	public static void disConnect(PreparedStatement st,Connection con) throws SQLException {
+		st.close();
+		con.close();
+	}
+	
 }

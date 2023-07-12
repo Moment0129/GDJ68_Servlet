@@ -13,15 +13,25 @@ public class BankBookInput {
 	BankBookDTO bankBookDTO = new BankBookDTO();
 	BankBookDAO bankBookDAO = new BankBookDAO();
 	
+	// 상품 이름으로 조회
+	public BankBookDTO bankBookSearch() throws Exception {
+		
+		BankBookDTO bankBookDTO = new BankBookDTO();
+		
+		System.out.println("조회하실 상품의 이름을 입력해주세요.");
+		bankBookDTO.setBookName(sc.next());
+			
+		return bankBookDTO;
+	}
+	
 	// 상품 조회
 	public BankBookDTO bankBookDetail() throws Exception {
 		
 		BankBookDTO bankBookDTO = new BankBookDTO();
 		
 		System.out.println("조회하실 상품의 번호를 입력해주세요.");
-		bankBookDTO.setBookNum(sc.nextLong());
+		bankBookDTO.setBookNum(sc.nextInt());
 		
-		bankBookDAO.bankBookDelete(bankBookDTO);
 		
 		return bankBookDTO;
 	}
@@ -55,7 +65,7 @@ public class BankBookInput {
 		
 
 		System.out.println("삭제할 상품의 번호를 입력해주세요.");
-		bankBookDTO.setBookNum(sc.nextLong());
+		bankBookDTO.setBookNum(sc.nextInt());
 		
 		bankBookDAO.bankBookDelete(bankBookDTO);
 		
