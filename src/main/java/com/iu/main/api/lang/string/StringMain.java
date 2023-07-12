@@ -9,7 +9,7 @@ public class StringMain {
 //		stringStudy.s1();
 //		stringStudy.s2();
 //		stringStudy.s3();
-		stringStudy.ex1();
+		stringStudy.ex2();
 		
 		
 //		Scanner sc = new Scanner(System.in);

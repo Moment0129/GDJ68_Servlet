@@ -91,34 +91,71 @@ public class StringStudy {
 		System.out.println(str);
 	}
 	
-	public String ex1() {
+	public void ex1() {
 		// 파일명.확장자		예)abc.gif
 		// 확장자가 jpg면 이미지파일 출력
 		// 확장자가 doc면 문서파일 출력
 		// 확장자가 mp3면 오디오파일 출력
 		// 그외		  알수없는 파일 형식 출력
 		
-		System.out.println("입력해주세요.");
-		String file = sc.next();
-		file = file.substring(file.lastIndexOf(".")+1);
+//		System.out.println("입력해주세요.");
+//		String file = sc.next();
+//		file = file.substring(file.lastIndexOf(".")+1);
+//		
+//		System.out.println("File : " + file);
+//		
+//		if(file.equals("jpg")) {
+//			System.out.println("이미지파일");
+//		} else if(file.equals("doc")) {
+//			System.out.println("문서파일");
+//		} else if(file.equals("mp3")) {
+//			System.out.println("오디오파일");
+//		} else {
+//			System.out.println("알 수 없는 파일형식");
+//		}
+//		
+//		return file;
 		
-		System.out.println("File : " + file);
+		System.out.println("파일명 입력");
+		String fileName = sc.nextLine();
+		System.out.println(fileName);
 		
-		if(file.equals("jpg")) {
-			System.out.println("이미지파일");
-		} else if(file.equals("doc")) {
-			System.out.println("문서파일");
-		} else if(file.equals("mp3")) {
-			System.out.println("오디오파일");
+		// 2가지, 1)split, subString
+		
+//		// 1)split
+//		
+//		String [] fn = fileName.split(".");
+//		// ▲ 온점으로는 split이 안되서 이 방법은 보류
+//			
+//		// 3-2, 4-3, 2-1, 1-0 (패턴찾기)
+//		fileName = fileName.substring(2,4);
+//		System.out.println(fn[fn.length-1]);
+//		
+//		System.out.println(fileName);
+		
+		/*--------------------------------------------*/
+		
+//		// 2)subString
+//		
+//		int index = fileName.lastIndexOf(".");
+//		fileName.substring(index);
+//		// ▲ 위의 방법도 맞는 방법이지만 불필요한 변수를 생성하게 되기 때문에 길어진다.
+		// ▼ 아래의 방법이 깔끔함!
+		fileName = fileName.substring(fileName.lastIndexOf(".")+1);
+		
+		//              ▼
+		if(fileName.toLowerCase().equals("jpg")) {
+			System.out.println("이미지");
+		} else if(fileName.equals("doc")) {
+			System.out.println("문서");
+		} else if(fileName.equals("mp3")) {
+			System.out.println("음악");
 		} else {
-			System.out.println("알 수 없는 파일형식");
+			System.out.println("알수 없음");
 		}
-		
-		return file;
-		
 	}
 	
-	public void ex2(String file) {
+	public void ex2() {
 		// 파일명.확장자		예)abc.gif
 		// 확장자가 jpg,jpeg,png,gif면 이미지파일 출력
 		// 확장자가 doc,txt,hwp면 문서파일 출력
@@ -126,34 +163,81 @@ public class StringStudy {
 		// 그외 알수없는 파일 형식 출력
 		// return;
 		
-		this.ex1();
+//		this.ex1();
+//		
+//		
+//		String [] files1 = {"jpg","jpeg","png","gif"}; 
+//		String [] files2 = {"doc","txt","hwp"};
+//		String [] files3 = {"mp3","wav","midi","pcm"};
+//
+//		
+//
+//			for(int i=0; i<files1.length; i++) {
+//				if(file.equals(files1[i])) {
+//					System.out.println("이미지파일");
+//				}
+//			}
+//			
+//			for(int i=0; i<files2.length; i++) {
+//				if(file.equals(files2[i])) {
+//					System.out.println("문서파일");
+//				}
+//			}
+//			
+//			for(int i=0; i<files3.length; i++) {
+//				if(file.equals(files3[i])) {
+//					System.out.println("오디오파일");
+//				}
+//			}
+		
+//		this.ex1();
+//		
+//		
+//		String [] files1 = {"jpg","jpeg","png","gif"}; 
+//		String [] files2 = {"doc","txt","hwp"};
+//		String [] files3 = {"mp3","wav","midi","pcm"};
+//
+//		
+//
+//			for(int i=0; i<files1.length; i++) {
+//				if(file.equals(files1[i])) {
+//					System.out.println("이미지파일");
+//				}
+//			}
 		
 		
-		String [] files1 = {"jpg","jpeg","png","gif"}; 
-		String [] files2 = {"doc","txt","hwp"};
-		String [] files3 = {"mp3","wav","midi","pcm"};
 
+		String fileName = "abc.jpg";
 		
-
-			for(int i=0; i<files1.length; i++) {
-				if(file.equals(files1[i])) {
+		String [] images = {"jpg","jpeg","png","gif"};
+		String [] docs = {"doc","txt","hwp"};
+		String [] musics = {"mp3","wav","midi","pcm"};
+		
+		
+		
+		
+			for(int i=0; i<images.length; i++) {
+				if(fileName.equals(images[i])) {
 					System.out.println("이미지파일");
+					return;
 				}
 			}
 			
-			for(int i=0; i<files2.length; i++) {
-				if(file.equals(files2[i])) {
+			for(int i=0; i<docs.length; i++) {
+				if(fileName.equals(docs[i])) {
 					System.out.println("문서파일");
+					return;
 				}
 			}
 			
-			for(int i=0; i<files3.length; i++) {
-				if(file.equals(files3[i])) {
+			for(int i=0; i<musics.length; i++) {
+				if(fileName.equals(musics[i])) {
 					System.out.println("오디오파일");
+					return;
 				}
 			}
-			
+		
+			System.out.println("알 수 없는 파일");
 
 	}
-	
 }
